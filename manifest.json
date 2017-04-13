@@ -1,0 +1,37 @@
+{
+  "name": "Goodbye HTML",
+  "description": "Simple extension that allows you to remove unwanted HTML from a webpage.",
+  "version": "0.1",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Say goodbye to some HTML!"
+  },
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "commands": {
+      "toggle-feature-extension": {
+        "suggested_key": {
+          "default": "Alt+H"
+        },
+        "description": "Toggle extension on/off"
+      }
+    },
+  "icons": {
+    "16":"GoodbyeHtml.png", "48":"GoodbyeHtml.png", "128":"GoodbyeHtml.png"
+  }
+}
